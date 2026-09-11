@@ -10,7 +10,7 @@ ff_ram:
     leaq ram+0x58, %rbx
 
     address_loop:
-        movb $0xFF, %rax
+        movq $0xFF, (%rax)
         incq %rax
         cmpq %rbx, %rax
         jle address_loop
